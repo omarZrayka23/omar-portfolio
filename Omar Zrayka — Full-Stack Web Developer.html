@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Omar Zrayka — Full-Stack Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f8;--surface:#fff;--ink:#12233a;--mute:#52627a;--line:#d5dde8;--accent:#0b6e66;--accent-ink:#fff;--warm:#b4561b;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a2b;--surface:#15263d;--ink:#e8eef6;--mute:#9db0c7;--line:#26405f;--accent:#4fd1c0;--accent-ink:#062925;--warm:#f0a36b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1a2b;--surface:#15263d;--ink:#e8eef6;--mute:#9db0c7;--line:#26405f;--accent:#4fd1c0;--accent-ink:#062925;--warm:#f0a36b;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;overflow-x:hidden}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:clamp(18px,5vw,40px)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-weight:500}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+.lang{font:500 15px inherit;font-family:inherit;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer}
+.lang:hover{background:var(--ink);color:var(--bg)}
+.hero{position:relative;padding-block:clamp(48px,10vw,110px) clamp(40px,7vw,80px)}
+.hero h1{font-size:clamp(2.2rem,6.2vw,4.4rem);line-height:1.08;letter-spacing:-.025em;font-weight:600;margin:0 0 24px;max-width:15em;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero p.lead{font-size:1.15rem;color:var(--mute);max-width:36em;margin:0 0 30px;animation:rise .8s .15s cubic-bezier(.2,.7,.2,1) both}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;animation:rise .8s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;font:500 16px inherit;font-family:inherit;padding:12px 22px;border-radius:8px;border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.orb{position:absolute;inset-inline-end:-60px;top:10px;width:clamp(180px,34vw,380px);aspect-ratio:1;border-radius:50%;border:2px solid var(--accent);opacity:.35;pointer-events:none;will-change:transform}
+.orb.b{width:clamp(110px,20vw,230px);inset-inline-end:clamp(40px,12vw,150px);top:160px;border-color:var(--warm);opacity:.4}
+section{padding-block:clamp(40px,7vw,76px);border-top:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.015em;margin:0 0 28px;font-weight:600}
+.proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:12px 40px;padding-block:26px;border-bottom:1px solid var(--line)}
+.proj:last-child{border-bottom:0}
+.proj h3{margin:0;font-size:1.25rem;font-weight:600}
+.proj .stack{color:var(--accent);font-weight:500;font-size:.95rem;margin-top:4px}
+.proj p{margin:0 0 10px;color:var(--mute)}
+.links{font-size:.95rem;display:flex;gap:16px;flex-wrap:wrap}
+.links span{color:var(--mute);font-style:italic}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px 36px;margin:0}
+.skills dt{font-weight:600;margin-bottom:4px}.skills dd{margin:0;color:var(--mute)}
+.demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.panel h3{margin:0 0 6px;font-size:1.15rem}.panel .hint{margin:0 0 18px;color:var(--mute);font-size:.95rem}
+label{display:block;font-weight:500;font-size:.95rem;margin-bottom:14px}
+input,select,textarea{display:block;width:100%;margin-top:5px;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px}
+.out{margin-top:10px;padding:14px;border-radius:10px;background:var(--bg);border:1px dashed var(--line)}
+.out b{font-size:1.5rem;display:block;color:var(--accent)}
+.steps{display:flex;gap:6px;margin-bottom:18px}.steps i{flex:1;height:5px;border-radius:3px;background:var(--line)}.steps i.on{background:var(--accent)}
+.err{color:var(--warm);font-size:.9rem;min-height:1.3em;margin:0 0 8px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 24px;padding-block:14px;border-bottom:1px solid var(--line)}
+.tl li:last-child{border-bottom:0}.tl time{color:var(--mute);font-size:.95rem}.tl b{font-weight:600}.tl span{color:var(--mute);display:block}
+footer{padding-block:34px;color:var(--mute);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:700px){.proj,.tl li{grid-template-columns:1fr}.orb{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <nav aria-label="Main">
+  <a href="#work" data-i="nWork">Work</a><a href="#stack" data-i="nStack">Skills</a><a href="#demo" data-i="nDemo">Live demos</a><a href="#exp" data-i="nExp">Experience</a><a href="#contact" data-i="nContact">Contact</a>
+ </nav>
+ <button class="lang" id="lang" type="button" aria-label="Switch language">العربية</button>
+</header>
+
+<div class="hero">
+ <div class="orb" data-p=".12" aria-hidden="true"></div><div class="orb b" data-p="-.07" aria-hidden="true"></div>
+ <h1 data-i="h1">Omar Zrayka builds fast, multilingual web apps for finance and business.</h1>
+ <p class="lead" data-i="lead">Full-stack developer with 10+ years in React, Next.js, Node.js, PHP and .NET. I connect front ends to APIs, payments and third-party platforms, and ship them responsive and accessible. This page switches to Arabic with full right-to-left layout.</p>
+ <div class="cta"><a class="btn" href="#demo" data-i="cta1">Try the demos</a><a class="btn alt" href="#contact" data-i="cta2">Get in touch</a></div>
+</div>
+
+<section id="work">
+ <h2 data-i="hWork">Selected work</h2>
+ <article class="proj">
+  <div><h3>Site engineering mobile app</h3><div class="stack">React · NestJS · SQL · offline sync</div></div>
+  <div><p data-i="p4">Mobile app for section and site engineers that works offline and online and syncs automatically when a connection returns. I also reverse-engineered a legacy Microsoft Access system and rebuilt it on React, NestJS and a SQL database. Built for Arabian Construction Company.</p><div class="links" data-link="p4"></div></div>
+ </article>
+ <article class="proj">
+  <div><h3>Tender Management System</h3><div class="stack">React.js · .NET Web API</div></div>
+  <div><p data-i="p1">End-to-end platform for creating, tracking and reporting tenders, with multi-level approval workflows, dashboards and multi-step forms. Built for Arabian Construction Company.</p><div class="links" data-link="p1"></div></div>
+ </article>
+ <article class="proj">
+  <div><h3>Enterprise ERP modules</h3><div class="stack">React · Next.js · TypeScript · Material UI</div></div>
+  <div><p data-i="p2">Finance, Inventory, Procurement and Operations interfaces with a shared component library, REST API integration and banking and financial integrations for secure transactions. Built at SoftMachine.</p><div class="links" data-link="p2"></div></div>
+ </article>
+ <article class="proj">
+  <div><h3>E-commerce operations platform</h3><div class="stack">PHP · React · Next.js · Tailwind CSS</div></div>
+  <div><p data-i="p3">Inventory and order management for a store processing 30,000+ orders a month, a warehouse barcode-scanning app, and a front-end migration to Next.js and Tailwind. Built at Ishtari.</p><div class="links" data-link="p3"></div></div>
+ </article>
+</section>
+
+<section id="stack">
+ <h2 data-i="hStack">Skills</h2>
+ <dl class="skills">
+  <div><dt data-i="s1">Front end</dt><dd>React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Material UI, Vue.js, responsive design</dd></div>
+  <div><dt data-i="s2">Back end and APIs</dt><dd>Node.js, NestJS, PHP, .NET Web API, REST, offline-first sync, JWT authentication, RBAC, third-party integrations</dd></div>
+  <div><dt data-i="s3">Databases</dt><dd>MySQL, PostgreSQL, SQL Server, schema design, query optimization</dd></div>
+  <div><dt data-i="s4">Delivery</dt><dd>Git, GitHub, Jira, Postman, code review, Agile, performance tuning</dd></div>
+ </dl>
+</section>
+
+<section id="demo">
+ <h2 data-i="hDemo">Live demos</h2>
+ <div class="demo">
+  <div class="panel">
+   <h3 data-i="d1t">Position size calculator</h3><p class="hint" data-i="d1h">The kind of finance widget I build into dashboards. Runs in your browser.</p>
+   <label><span data-i="d1a">Account balance</span><input id="bal" type="number" inputmode="decimal" value="10000" min="0"></label>
+   <label><span data-i="d1b">Risk per trade (%)</span><input id="risk" type="number" inputmode="decimal" value="1" min="0" step="0.1"></label>
+   <label><span data-i="d1c">Entry price</span><input id="ent" type="number" inputmode="decimal" value="1.1000" step="any"></label>
+   <label><span data-i="d1d">Stop-loss price</span><input id="stp" type="number" inputmode="decimal" value="1.0950" step="any"></label>
+   <div class="out" aria-live="polite"><span data-i="d1o">Position size (units)</span><b id="res">—</b><small id="amt"></small></div>
+  </div>
+  <div class="panel">
+   <h3 data-i="d2t">Multi-step enquiry form</h3><p class="hint" data-i="d2h">Validated step by step. The last step opens a ready-to-send email.</p>
+   <div class="steps" id="steps"><i class="on"></i><i></i><i></i></div>
+   <div id="f1"><label><span data-i="fn">Name</span><input id="nm" autocomplete="name"></label><label><span data-i="fe">Email</span><input id="em" type="email" autocomplete="email"></label></div>
+   <div id="f2" hidden><label><span data-i="ft">What do you need?</span><select id="tp"><option>Website</option><option>Dashboard or calculator</option><option>Third-party integration</option><option>Client portal or onboarding</option></select></label><label><span data-i="fm">Details</span><textarea id="ms" rows="3"></textarea></label></div>
+   <div id="f3" hidden><p id="sum" style="margin-top:0"></p></div>
+   <p class="err" id="err" role="alert"></p>
+   <div class="row"><button class="btn alt" id="back" type="button" hidden data-i="fb">Back</button><button class="btn" id="next" type="button" data-i="fnx">Continue</button></div>
+  </div>
+ </div>
+</section>
+
+<section id="exp">
+ <h2 data-i="hExp">Experience</h2>
+ <ul class="tl">
+  <li><time>Mar 2026 – now</time><div><b>Senior Full-Stack Developer</b> — Arabian Construction Company<span>React.js, .NET, tender workflows</span></div></li>
+  <li><time>Jan – Mar 2026</time><div><b>Frontend Developer</b> — Suppy<span>Vue.js and TypeScript admin portal</span></div></li>
+  <li><time>Nov 2023 – Jan 2026</time><div><b>Frontend Developer</b> — SoftMachine<span>ERP modules, banking integrations</span></div></li>
+  <li><time>Mar 2020 – Nov 2023</time><div><b>Full-Stack Developer</b> — Ishtari<span>PHP back end, React and Next.js, team lead</span></div></li>
+  <li><time>2014 – 2020</time><div><b>Software Engineer and Developer</b> — Techno New, Creative Ray, freelance<span>Business platforms, surveillance and telecom systems</span></div></li>
+ </ul>
+</section>
+
+<section id="contact">
+ <h2 data-i="hContact">Contact</h2>
+ <p data-i="cp">Open to a full-time remote role. Based in Lebanon.</p>
+ <div class="row"><a class="btn" href="mailto:omar.zraika@outlook.com">omar.zraika@outlook.com</a><a class="btn alt" href="https://linkedin.com/in/omar-zraika-230577241" rel="noopener">LinkedIn</a><a class="btn alt" href="tel:+96170275337">+961 70 275 337</a></div>
+</section>
+<footer>© 2026 Omar Zrayka</footer>
+</div>
+
+<script>
+// EDIT THESE: add your real links and they appear under each project.
+var LINKS={p4:{github:"",live:""},p1:{github:"",live:""},p2:{github:"",live:""},p3:{github:"",live:""}};
+var AR={nWork:"الأعمال",nStack:"المهارات",nDemo:"عروض تفاعلية",nExp:"الخبرة",nContact:"تواصل",
+h1:"عمر زريقة يبني تطبيقات ويب سريعة ومتعددة اللغات للمجال المالي والأعمال.",
+lead:"مطوّر ويب متكامل بخبرة تزيد على 10 سنوات في React وNext.js وNode.js وPHP و.NET. أربط الواجهات بالخدمات والمنصات الخارجية وأسلّمها متجاوبة وسهلة الوصول. تتحول هذه الصفحة إلى العربية بتخطيط من اليمين إلى اليسار.",
+cta1:"جرّب العروض",cta2:"تواصل معي",hWork:"أعمال مختارة",
+p1:"منصة متكاملة لإنشاء المناقصات ومتابعتها وإعداد تقاريرها، مع مسارات موافقة متعددة المستويات ولوحات معلومات ونماذج متعددة الخطوات. لصالح شركة المقاولات العربية.",
+p2:"واجهات الوحدات المالية والمخزون والمشتريات والعمليات مع مكتبة مكوّنات مشتركة وتكامل مع واجهات REST وحلول مصرفية للمعاملات الآمنة. في SoftMachine.",
+p4:"تطبيق جوال للمهندسين في الأقسام والمواقع يعمل دون اتصال ومع الاتصال، ويزامن البيانات تلقائياً عند عودة الشبكة. كما أجريت هندسة عكسية لنظام Microsoft Access قديم وأعدت بناءه باستخدام React وNestJS وقاعدة بيانات SQL. لصالح شركة المقاولات العربية.",
+p3:"إدارة المخزون والطلبات لمتجر يعالج أكثر من 30,000 طلب شهرياً، وتطبيق مسح الباركود للمستودع، وترحيل الواجهة إلى Next.js وTailwind. في Ishtari.",
+hStack:"المهارات",s1:"الواجهات الأمامية",s2:"الخلفية وواجهات API",s3:"قواعد البيانات",s4:"التسليم والأدوات",
+hDemo:"عروض تفاعلية",d1t:"حاسبة حجم الصفقة",d1h:"نوع الأدوات المالية التي أدمجها في لوحات المعلومات. تعمل داخل متصفحك.",
+d1a:"رصيد الحساب",d1b:"المخاطرة لكل صفقة (%)",d1c:"سعر الدخول",d1d:"سعر وقف الخسارة",d1o:"حجم الصفقة (وحدات)",
+d2t:"نموذج استفسار متعدد الخطوات",d2h:"يتحقق من كل خطوة. الخطوة الأخيرة تفتح رسالة بريد جاهزة للإرسال.",
+fn:"الاسم",fe:"البريد الإلكتروني",ft:"ما الذي تحتاجه؟",fm:"التفاصيل",fb:"رجوع",fnx:"متابعة",
+hExp:"الخبرة",hContact:"تواصل",cp:"متاح لوظيفة بدوام كامل عن بُعد. مقيم في لبنان."};
+var UI={en:{calc:"Enter a stop price different from entry.",amt:"Capital at risk: ",nameErr:"Enter your name.",mailErr:"Enter a valid email address.",msgErr:"Add a few details.",send:"Open email",next:"Continue",sum:function(n,t){return "Ready to send, "+n+": "+t+"."}},
+ar:{calc:"أدخل سعر وقف خسارة مختلفاً عن سعر الدخول.",amt:"رأس المال المعرّض للخطر: ",nameErr:"أدخل اسمك.",mailErr:"أدخل بريداً إلكترونياً صحيحاً.",msgErr:"أضف بعض التفاصيل.",send:"افتح البريد",next:"متابعة",sum:function(n,t){return "جاهز للإرسال يا "+n+": "+t+"."}}};
+var lang="en",$=function(s){return document.querySelector(s)};
+document.querySelectorAll("[data-i]").forEach(function(e){e.dataset.en=e.textContent});
+function renderLinks(){document.querySelectorAll("[data-link]").forEach(function(box){var l=LINKS[box.dataset.link],h="";
+ var gh=lang==="ar"?"الشيفرة على GitHub":"Code on GitHub",lv=lang==="ar"?"الموقع المباشر":"Live site",soon=lang==="ar"?"الروابط قريباً":"Links coming soon";
+ if(l.github)h+='<a href="'+l.github+'" rel="noopener">'+gh+'</a>';if(l.live)h+='<a href="'+l.live+'" rel="noopener">'+lv+'</a>';
+ box.innerHTML=h||"<span>"+soon+"</span>"})}
+function setLang(l){lang=l;var h=document.documentElement;h.lang=l;h.dir=l==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-i]").forEach(function(e){e.textContent=l==="ar"&&AR[e.dataset.i]?AR[e.dataset.i]:e.dataset.en});
+ $("#lang").textContent=l==="ar"?"English":"العربية";document.title=l==="ar"?"عمر زريقة — مطوّر ويب متكامل":"Omar Zrayka — Full-Stack Web Developer";
+ renderLinks();calc();paintStep()}
+$("#lang").onclick=function(){setLang(lang==="en"?"ar":"en")};
+function calc(){var b=+$("#bal").value,r=+$("#risk").value,e=+$("#ent").value,s=+$("#stp").value,d=Math.abs(e-s),res=$("#res"),a=$("#amt");
+ if(!(b>0&&r>0&&d>0)){res.textContent="—";a.textContent=UI[lang].calc;return}
+ res.textContent=Math.floor(b*r/100/d).toLocaleString(lang==="ar"?"ar-LB":"en-US");a.textContent=UI[lang].amt+(b*r/100).toFixed(2)}
+["bal","risk","ent","stp"].forEach(function(i){$("#"+i).oninput=calc});
+var step=1;
+function paintStep(){[1,2,3].forEach(function(n){$("#f"+n).hidden=n!==step});document.querySelectorAll("#steps i").forEach(function(e,i){e.classList.toggle("on",i<step)});
+ $("#back").hidden=step===1;var nx=$("#next");nx.textContent=step===3?UI[lang].send:UI[lang].next;
+ if(step===3)$("#sum").textContent=UI[lang].sum($("#nm").value.trim(),$("#tp").value)}
+$("#back").onclick=function(){step--;$("#err").textContent="";paintStep()};
+$("#next").onclick=function(){var err=$("#err"),t=UI[lang];err.textContent="";
+ if(step===1){if(!$("#nm").value.trim())return err.textContent=t.nameErr;if(!/^\S+@\S+\.\S+$/.test($("#em").value))return err.textContent=t.mailErr}
+ if(step===2&&!$("#ms").value.trim())return err.textContent=t.msgErr;
+ if(step===3){location.href="mailto:omar.zraika@outlook.com?subject="+encodeURIComponent($("#tp").value+" — "+$("#nm").value.trim())+"&body="+encodeURIComponent($("#ms").value+"\n\n"+$("#nm").value.trim()+" ("+$("#em").value+")");return}
+ step++;paintStep()};
+var orbs=document.querySelectorAll(".orb"),still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(!still)addEventListener("scroll",function(){var y=scrollY;orbs.forEach(function(o){o.style.transform="translateY("+y*o.dataset.p+"px)"})},{passive:true});
+setLang("en");
+</script>
+</body>
+</html>
